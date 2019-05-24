@@ -149,7 +149,6 @@ class data_generator:
                     yield [X, C, S1, S2], None
                     X, C, S1, S2 = [], [], [], []
 
-
 from keras.layers import *
 from keras.models import Model
 import keras.backend as K
@@ -183,6 +182,7 @@ class Attention(Layer):
             return x
         else:
             for _ in range(K.ndim(x) - K.ndim(mask)):
+                # ndim以整数形式返回张量中的轴数。
                 mask = K.expand_dims(mask, K.ndim(mask))
             if mode == 'mul':
                 return x * mask
