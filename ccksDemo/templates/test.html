@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8"><!--utf-8国际编码 gbk gb2312中文编码-->
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="hsy">
+	<meta name="Keywords" content="null"><!--关键词 用于搜索-->
+	<meta name="Description" content=""><!--网页文档三要素-->
+	<title>面向金融领域的事件提取</title>
+	<link rel="icon" href="../static/ccks.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../static/register-login.css">
+	<style>/*css格式
+  		/*
+			第一步：找到对应的标签元素
+			第二部：设置值相应属性
+			css最好外部引入
+		*/
+		*{ /* *为通配符：选择所有标签元素*/
+			margin:0px;/*外边距*/
+			padding:0px;/*内边距*/
+		 }
+
+		body
+		{
+			background:url("../static/ccks.png");/*背景图*/
+			background-position:center -430px/*center左右居中 top上下显示上面*/
+		}
+
+		#content
+		{
+		    position: absolute;
+		    top: 0%;
+		    left: 18%;
+		    trasform: translate(-50%)
+		}
+
+		#button 
+		{
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			height:60px;
+			width:100px; 
+			font-size:20px;
+			text-decoration: none;
+			display: inline-block;
+			position:absolute;left:900px;top:850px
+		}
+
+		#input_v
+		{
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			font-size:20px;
+			text-decoration: none;
+			display: inline-block;
+			position:absolute;
+			left:140px;top:850px
+		}
+
+		#description
+		{
+			position:relative;left:0px;top:20px
+		}
+
+		#input_l
+		{
+			position:absolute;
+			left:20px;top:865px;
+			font-size:20px;
+			color: white;
+			background:black
+		}
+
+		#in_label
+		{
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			font-size:20px;
+			text-decoration: none;
+			display: inline-block;
+			position:absolute;
+			left:450px;top:850px
+		}
+  .article-container{
+    background-color: #ffffff;
+    padding-top:20px;
+    width:1024px;
+    margin:20px auto;
+  }
+
+  .article_r{
+    padding-top:10px;
+    float:right;
+  }
+  .pulisher,.time,.article_view,.article_comments,.article_del{
+    clear:both;
+    margin-right:25px;
+    font-size: 15px;
+  }
+  .title{
+    font-weight:bold;
+    font-size: 30px;
+    text-align: center;
+  }
+  .article_content{
+    background: #ffffff;
+    clear:both;
+    padding:1em 4em;
+    margin-top: 40px;
+  }
+  p{
+    text-indent: 2em;
+    text-overflow: hidden;
+    font-size:18px;
+  }
+
+  /*话题内容图片*/
+  .ImgContent{
+    width:350px;
+    margin:0px auto;
+    padding: 5px;
+    overflow:hidden;
+
+}
+
+.NavLinks{
+    padding:5px;
+    width:100px;
+    height: 100px;
+    float: left;
+    overflow: hidden;
+}
+
+.NavLinks img{
+    width: 100%;
+    height: 100%;
+}
+.hitShowPic {
+width:350px;
+clear:both;
+margin-left:430px;
+}
+.hitShowPic span {
+  font-size: 15px;
+  text-align: center;
+}
+    /*以下评论的css*/
+   .show_reply_list {
+    margin-right:1em;
+     color: grey;
+   }
+    .comment_list {
+    background-color: #ffffff;
+    padding-top:5px;
+    width:900px;
+    margin:0 auto;
+  }
+    .comment {
+      width:900px;
+      margin-top:10px;
+    }
+    .comment_details {
+      float:right;
+    }
+    .comment_content {
+      clear:both;
+      margin:5px 50px;
+      font-size:16px;
+    }
+  .comment_add_or_last {
+
+    margin:0 auto;
+    clear: both;
+    width:600px;
+    height:50px;
+    background: #F0F0F0;
+    text-align: center;
+    font-size:20px;
+     line-height: 40px;   //行高（与div保持同高，垂直居中写法）
+     margin-bottom: 40px;
+  }
+  .imgdiv{
+       width:80px;
+       height:70px;
+      float:left;
+
+  }
+  .imgcss {
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+  }
+  .comment_name {
+    margin-left:10px;
+    color:#3D9EEA;
+    font-size:16px;
+    font-weight: bolder;
+  }
+  .layui-icon {
+    font-size: 13px;
+    color: grey;
+  }
+  .del {
+    float:right;
+
+  }
+  .del_comment {
+     margin-right:50px;
+  }
+
+
+
+  .reply_list {
+    clear:both;
+    display:none;
+    width:900px;
+
+    padding-right:15px;
+    margin-top:10px;
+      font-size:16px;
+
+  }
+  .reply {
+    clear:both;
+    width:700px;
+    margin:4px auto;
+
+  }
+  .reply_name {
+    color:#3D9EEA;
+  }
+  .del_reply {
+      float:right;
+  }
+  .show_remain_reply {
+     width:600px;
+     height:40px;
+     text-align:center;font-size:18px;
+     background-color: #F0F0F0;
+     margin:0 auto;
+     line-height: 40px;
+     display:none;
+  }
+
+  </style>
+		
+  </head>
+  <div>
+  	<form method="post">
+		<h1 align="center" style="color:black; font-size:60px">面向金融领域的事件主体提取服务</h1>
+		
+		<div style="width:800px;margin:10px auto">
+			<table>
+
+				<tr><td><textarea  name="comments" style="width:800px;height:400px" placeholder="输入格式：事件,谓语"></textarea></td></tr>
+                <tr><td>
+                <div class="button" align="center">
+                <button type="submit" class="login-btn register-btn" id="button" style="width: 200px">提交</button>
+                </div>
+				</td></tr>
+				<tr><td><h1 align="center" style="color:black; font-size:30px">事件主体</h1></td></tr>
+				<tr><td><h1 align="center" style="color:red; font-size:30px">{{ result }}</h1></td></tr>
+			</table>
+		</div>
+	</form>
+  </div>
+  </body>
+
+</html>
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8"><!--utf-8国际编码 gbk gb2312中文编码-->
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="hsy">
+	<meta name="Keywords" content="null"><!--关键词 用于搜索-->
+	<meta name="Description" content=""><!--网页文档三要素-->
+	<title>面向金融领域的事件提取</title>
+	<link rel="icon" href="./ccks.ico" type="image/x-icon" />
+	<style>/*css格式
+  		/*
+			第一步：找到对应的标签元素
+			第二部：设置值相应属性
+			css最好外部引入
+		*/
+		*{ /* *为通配符：选择所有标签元素*/
+			margin:0px;/*外边距*/
+			padding:0px;/*内边距*/
+		 }
+
+		body
+		{
+			background:url("ccks.png");/*背景图*/
+			background-position:center -430px/*center左右居中 top上下显示上面*/
+		}
+
+		#content
+		{
+		    position: absolute;
+		    top: 0%;
+		    left: 18%;
+		    trasform: translate(-50%)
+		}
+
+		#button 
+		{
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			height:60px;
+			width:100px; 
+			font-size:20px;
+			text-decoration: none;
+			display: inline-block;
+			position:absolute;left:900px;top:850px
+		}
+
+		#input_v
+		{
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			font-size:20px;
+			text-decoration: none;
+			display: inline-block;
+			position:absolute;
+			left:140px;top:850px
+		}
+
+		#description
+		{
+			position:relative;left:0px;top:20px
+		}
+
+		#input_l
+		{
+			position:absolute;
+			left:20px;top:865px;
+			font-size:20px;
+			color: white;
+			background:black
+		}
+
+		#in_label
+		{
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			font-size:20px;
+			text-decoration: none;
+			display: inline-block;
+			position:absolute;
+			left:450px;top:850px
+		}
+  </style>
+		
+  </head>
+  <body style="text-align:center;"> <!--内容居中-->
+  	<div id="content">
+  		<h1 align="center"  style="color:white; font-size:80px; background:black">面向金融领域的事件主体提取服务</h1>
+
+		<img id="description" src="description.png" width="820" height="640" /> 
+		<p id="input_l" style="color:white; background:black">待检测文本:</p>
+		<input id="input_v" type="text" placeholder="请输入文本"/>
+		
+		<input id="in_label" type="text" placeholder="请输入事件标签"/>
+		<input id="button" type="button" onclick="readText()" value="确认" />
+      
+		<div id="tt">
+
+		</div>
+	</div>
+  </body>
+</html>
+
+
+<script charset="utf-8">
+window.onload=function () {
+  if(typeof(FileReader)=="undefined")
+  {
+    alert("你的浏览器不支持文件读取");
+    document.write("");
+  }else
+  {
+    alert("你的浏览器支持文件读取");
+  }
+}
+  function readText() {
+      var input_value=document.getElementById("input_v").value;
+      var input_label=document.getElementById("in_label").value;
+	
+	  tt.innerHTML=input_value
+    }
+   
+</script>
